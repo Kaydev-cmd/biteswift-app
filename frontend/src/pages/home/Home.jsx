@@ -1,6 +1,7 @@
 // import React from 'react'
 import { Hero } from "../../components/Hero";
 import HiwCards from "../../components/HiwCards";
+import { MenuCards } from "../../components/MenuCards";
 import "./Home.css";
 
 export const Home = () => {
@@ -23,6 +24,24 @@ export const Home = () => {
               </p>
             </div>
             <HiwCards />
+          </div>
+        </div>
+      </section>
+      <section className="menu" id="menu">
+        <div className="container">
+          <div className="content">
+            <div className="text">
+              <p>
+                <span>Our menu</span>
+              </p>
+              <h3>Our Popular Menu</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur
+                <br />
+                adipiscing elit ut aliquam
+              </p>
+              <MenuCards />
+            </div>
           </div>
         </div>
       </section>

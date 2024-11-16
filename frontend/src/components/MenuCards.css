@@ -1,0 +1,132 @@
+.menu .content-cards,
+.menu .content-cards .card .upper-wrapper,
+.menu .content-cards .card .lower-wrapper .price-and-icon {
+  display: flex;
+}
+
+.menu .content-cards,
+.menu .content-cards .card .lower-wrapper .price-and-icon {
+  align-items: center;
+}
+
+.menu .content-cards .card .upper-wrapper,
+.menu .content-cards .card .lower-wrapper {
+  padding: 20px;
+}
+
+.menu .content-cards {
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.menu .content-cards .card {
+  width: 280px;
+}
+
+.menu .content-cards .card .upper-wrapper {
+  background-color: #f1f1f1;
+  justify-content: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.menu .content-cards .card .lower-wrapper {
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.menu .content-cards .card .lower-wrapper .text h3 {
+  font-size: 22px;
+}
+
+.menu .content-cards .card .lower-wrapper .text p {
+  font-size: 14px;
+}
+
+.menu .content-cards .card .lower-wrapper .text {
+  text-align: center;
+}
+
+.menu .content-cards .card .lower-wrapper .price-and-icon {
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.menu .content-cards .card .lower-wrapper .price-and-icon .heartIcon {
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.menu .content-cards .card .lower-wrapper .price-and-icon .heartIcon:hover {
+  fill: #ffcb45;
+}
+
+/* Media Queries */
+
+/* 2xl */
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+  .menu .content-cards .card {
+    width: 240px;
+  }
+  .menu .content-cards .card .upper-wrapper img {
+    width: 180px;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+  .menu .content-cards .card {
+    width: 180px;
+  }
+  .menu .content-cards .card .upper-wrapper img {
+    width: 120px;
+  }
+  .menu .content-cards .card .lower-wrapper .text h3 {
+    font-size: 18px;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+  .menu .content-cards {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .menu .content-cards .card {
+    width: 280px;
+  }
+  .menu .content-cards .card .upper-wrapper img {
+    width: 100%;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .container {
+    width: 100%;
+  }
+}
