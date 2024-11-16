@@ -1,0 +1,157 @@
+/* Work on links transition and animation */
+
+.navbar {
+  background-image: url("/images/home/navbar.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar .content .menu {
+  display: none;
+}
+
+.navbar .content,
+.navbar .content .header a,
+.navbar .content .links nav ul,
+.navbar .content .icons-and-btn,
+.navbar .content .icons-and-btn button {
+  display: flex;
+}
+
+.navbar .content,
+.navbar .content .header a,
+.navbar .content .icons-and-btn,
+.navbar .content .icons-and-btn button {
+  align-items: center;
+}
+
+.navbar .content .header a,
+.navbar .content .links nav ul li a {
+  color: #000;
+}
+
+.navbar .content {
+  justify-content: space-between;
+  padding: 14px 60px;
+}
+
+.navbar .content .header a {
+  gap: 2px;
+  text-decoration: none;
+}
+
+.navbar .content .header a h1 {
+  font-size: 16px;
+  text-transform: none;
+}
+
+.navbar .content .header a img {
+  width: 30px;
+}
+
+.navbar .content .links nav ul {
+  gap: 40px;
+}
+
+.navbar .content .links nav ul li {
+  list-style: none;
+}
+
+.navbar .content .links nav ul li a {
+  text-decoration: none;
+}
+
+.navbar .content .links nav ul li a:hover {
+  text-decoration: underline 2px #ffcb45;
+}
+
+.navbar .content .icons-and-btn {
+  gap: 40px;
+}
+
+.navbar .content .icons-and-btn button {
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffcb45;
+  border: none;
+  width: 102px;
+  height: 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar .content .icons-and-btn button:hover {
+  opacity: 0.9;
+}
+
+.navbar .content .icons-and-btn .searchIcon,
+.navbar .content .icons-and-btn .cartIcon {
+  transition: 0.3s ease-in;
+}
+
+.navbar .content .icons-and-btn .searchIcon:hover,
+.navbar .content .icons-and-btn .cartIcon:hover {
+  fill: #ffcb45;
+}
+/* Media Queries */
+
+/* 2xl */
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+  .navbar .content .links nav ul li a {
+    font-size: 14px;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+  .navbar .content {
+    padding: 14px 0px;
+  }
+  .navbar .content .links nav ul {
+    gap: 20px;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+  .navbar .content .icons-and-btn,
+  .navbar .content .links {
+    display: none;
+  }
+  .navbar .content .menu {
+    display: flex;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .container {
+    width: 100%;
+  }
+}
