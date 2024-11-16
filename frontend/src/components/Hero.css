@@ -1,0 +1,133 @@
+/* Hero */
+.hero {
+  background-image: url("/images/home/Group 8.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-swiper {
+  --swiper-pagination-color: #ffcb45;
+  --swiper-pagination-bullet-inactive-color: #4d4d4d;
+  --swiper-pagination-bullet-size: 12px;
+}
+
+.hero .content,
+.hero .content .left-wrapper {
+  display: flex;
+}
+
+.hero .content {
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0px;
+}
+
+.hero .content .left-wrapper {
+  flex-direction: column;
+  gap: 80px;
+}
+
+.hero .content .left-wrapper .text h2 {
+  font-size: 68px;
+  text-transform: none;
+  margin-bottom: 16px;
+}
+
+.hero .content .left-wrapper .text h2 span {
+  color: #ffcb45;
+}
+
+.hero .content .left-wrapper .text p {
+  color: #1d1d1d;
+}
+
+.hero .content .left-wrapper button {
+  background-color: #ffcb45;
+  border: none;
+  width: 102px;
+  height: 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.hero .content .left-wrapper button:hover {
+  opacity: 0.8;
+}
+
+/* Media Queries */
+
+/* 2xl */
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+  .hero .content .left-wrapper .text h2 {
+    font-size: 48px;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+  .hero .content img {
+    width: 400px;
+  }
+  .hero .content .left-wrapper .text h2 {
+    font-size: 38px;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+  .hero .content img {
+    width: 200px;
+  }
+  .hero .content .left-wrapper .text h2 {
+    font-size: 28px;
+  }
+  .hero .content .left-wrapper .text p {
+    font-size: 12px;
+  }
+  .hero .content .left-wrapper {
+    gap: 40px;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+  .hero .content img {
+    display: none;
+  }
+  .hero .content .left-wrapper {
+    align-items: center;
+  }
+  .hero .content .left-wrapper .text h2,
+  .hero .content .left-wrapper .text p {
+    text-align: center;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .container {
+    width: 100%;
+  }
+}
