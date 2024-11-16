@@ -3,7 +3,7 @@
 // import React from 'react'
 import { IconContext } from "react-icons";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { CiSearch } from "react-icons/ci";
+import { IoSearch } from "react-icons/io5";
 import { FaCartShopping } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
 import "./Navbar.css";
@@ -46,7 +46,7 @@ export const Navbar = () => {
                 <IconContext.Provider
                   value={{ color: "#000", className: "searchIcon" }}
                 >
-                  <CiSearch size={24} />
+                  <IoSearch size={24} />
                 </IconContext.Provider>
               </a>
               <a href="">
