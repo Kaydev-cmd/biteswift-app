@@ -1,3 +1,27 @@
+/* How It Works */
+
+.how-it-works {
+  margin-top: 40px;
+}
+
+.how-it-works .content .text h3,
+.how-it-works .content p {
+  text-align: center;
+}
+
+.how-it-works .content .text h3 {
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+.how-it-works .content p {
+  color: #1d1d1d;
+}
+
+.how-it-works .content p span {
+  color: #ffcb45;
+}
+
 /* Media Queries */
 
 /* 2xl */
@@ -32,6 +56,13 @@
 @media (max-width: 640px) {
   .container {
     max-width: 475px;
+  }
+  /* How it works */
+  .how-it-works .content .text h3 {
+    font-size: 24px;
+  }
+  .how-it-works .content .text p {
+    font-size: 14px;
   }
 }
 
