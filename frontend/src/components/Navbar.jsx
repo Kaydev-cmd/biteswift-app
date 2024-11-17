@@ -61,7 +61,11 @@ export const Navbar = () => {
                 Sign in
               </button>
             </div>
-            <HiOutlineMenuAlt3 className="menu" size={30} color="#ffcb45" />
+            <HiOutlineMenuAlt3
+              className="menu-icon"
+              size={30}
+              color="#ffcb45"
+            />
           </div>
         </div>
       </div>
