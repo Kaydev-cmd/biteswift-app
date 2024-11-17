@@ -104,6 +104,46 @@
   font-size: 38px;
 }
 
+/* Discount */
+
+.discount {
+  margin-top: 40px;
+}
+
+.discount .content {
+  background-image: url("/images/home/unsplash_2lWGQ02DGL8.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 40px;
+  gap: 80px;
+  border-radius: 12px;
+}
+
+.discount .content p {
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+}
+
+.discount .content button {
+  background-color: #ffcb45;
+  border: none;
+  width: 102px;
+  height: 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.discount .content button:hover {
+  opacity: 0.6;
+}
+
 /* Media Queries */
 
 /* 2xl */
@@ -141,6 +181,10 @@
   }
   .customers .content .right-wrapper .text h3 {
     font-size: 22px;
+  }
+  /* Discount */
+  .discount .content p {
+    font-size: 38px;
   }
 }
 
@@ -180,11 +224,19 @@
   .menu .content .text p {
     font-size: 14px;
   }
+  /* Discount */
+  .discount .content p {
+    font-size: 28px;
+  }
 }
 
 /* xs */
 @media (max-width: 475px) {
   .container {
     width: 100%;
+  }
+  /* Discount */
+  .discount .content p {
+    font-size: 22px;
   }
 }

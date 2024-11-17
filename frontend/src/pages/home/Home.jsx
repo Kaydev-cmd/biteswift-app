@@ -61,11 +61,22 @@ export const Home = () => {
                 <h3>
                   What Our Customers Say
                   <br />
-                  about us
+                  About us
                 </h3>
               </div>
               <CustomersCards />
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="discount">
+        <div className="container">
+          <div className="content">
+            <p>
+              Join our members and get
+              <br />a discount of up to 50%
+            </p>
+            <button>Sign Up</button>
           </div>
         </div>
       </section>
