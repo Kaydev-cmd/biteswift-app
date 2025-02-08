@@ -29,3 +29,5 @@ export const CustomersCards = () => {
     </>
   );
 };
+
+export default CustomersCards;

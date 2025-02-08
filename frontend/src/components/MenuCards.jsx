@@ -87,3 +87,5 @@ export const MenuCards = () => {
     </>
   );
 };
+
+export default MenuCards;
