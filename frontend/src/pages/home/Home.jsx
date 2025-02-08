@@ -1,5 +1,5 @@
 import React from "react";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect, useMemo } from "react";
 
 import "./Home.css";
 
@@ -10,8 +10,34 @@ const MenuCards = lazy(() => import("../../components/MenuCards"));
 const CustomersCards = lazy(() => import("../../components/CustomersCards"));
 
 const Home = () => {
+  // State for menu items and loading status
+  const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showMore, setShowMore] = useState(false);
+
+  // Fetch menu items (simulating API call)
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const res = await fetch("https://api.example.com/menu");
+        const data = await res.json();
+        setMenuItems(data);
+      } catch (error) {
+        console.error("Error fetching menu:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMenu();
+  }, []);
+
+  // Memoized filtered menu items
+  const displayedMenu = useMemo(() => {
+    return showMore ? menuItems : menuItems.slice(0, 4);
+  }, [menuItems, showMore]);
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="loading">Loading...</div>}>
       <Hero />
       {/* How It Works */}
       <section className="how-it-works" id="how-it-works">
@@ -32,6 +58,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Menu Section with Dynamic Data */}
       <section className="menu" id="menu">
         <div className="container">
           <div className="content">
