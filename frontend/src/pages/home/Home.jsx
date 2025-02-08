@@ -85,6 +85,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section className="customers" id="customers">
         <div className="container">
           <div className="content">
@@ -105,6 +106,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section className="discount">
         <div className="container">
           <div className="content">
@@ -112,7 +114,9 @@ const Home = () => {
               Join our members and get
               <br />a discount of up to 50%
             </p>
-            <button>Sign Up</button>
+            <button onClick={() => alert("Sign-up form coming soon!!")}>
+              Sign Up
+            </button>
           </div>
         </div>
       </section>
