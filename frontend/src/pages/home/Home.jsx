@@ -68,16 +68,20 @@ const Home = () => {
                 <span>Our menu</span>
               </p>
               <h3>Our Popular Menu</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur
-                <br />
-                adipiscing elit ut aliquam
-              </p>
-              <MenuCards />
-              <div className="menu-btn">
-                <button>More Menu</button>
-              </div>
+              <p>Fresh & delicious options, updated regularly.</p>
             </div>
+            {loading ? (
+              <p className="loading">Loading menu...</p>
+            ) : (
+              <>
+                <MenuCards items={displayedMenu} />
+                <div className="menu-btn">
+                  <button onClick={() => setShowMore(!showMore)}>
+                    {showMore ? "Show Less" : "More Menu"}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
