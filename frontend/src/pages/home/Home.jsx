@@ -1,13 +1,17 @@
-// import React from 'react'
-import { Hero } from "../../components/Hero";
-import HiwCards from "../../components/HiwCards";
-import { MenuCards } from "../../components/MenuCards";
-import { CustomersCards } from "../../components/CustomersCards";
+import React from "react";
+import { lazy, Suspense } from "react";
+
 import "./Home.css";
 
-export const Home = () => {
+// Lazy loading components for performance optimization
+const Hero = lazy(() => import("../../components/Hero"));
+const HiwCards = lazy(() => import("../../components/HiwCards"));
+const MenuCards = lazy(() => import("../../components/MenuCards"));
+const CustomersCards = lazy(() => import("../../components/CustomersCards"));
+
+const Home = () => {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Hero />
       {/* How It Works */}
       <section className="how-it-works" id="how-it-works">
@@ -80,7 +84,7 @@ export const Home = () => {
           </div>
         </div>
       </section>
-    </>
+    </Suspense>
   );
 };
 
