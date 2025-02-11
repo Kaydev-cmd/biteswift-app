@@ -1,8 +1,8 @@
 <h1>
-  🍔 Let'sFood - Fast & Reliable Food Delivery App 🚀
+  🍔 BiteSwift - Fast & Reliable Food Delivery App 🚀
 </h1>
 <p>
-  Let'sFood is a modern food delivery app that connects users with their favorite restaurants for quick, easy,   and seamless food ordering. Built with React, Node.js, Express, and MongoDB, the app ensures a smooth user experience with real-time tracking, secure payments, and personalized recommendations.
+  BiteSwift is a modern food delivery app that connects users with their favorite restaurants for quick, easy, and seamless food ordering. Built with React, Node.js, Express, and MongoDB, the app ensures a smooth user experience with real-time tracking, secure payments, and personalized recommendations.
 </p>
 <div>  
   <h2>
