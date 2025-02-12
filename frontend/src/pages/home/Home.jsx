@@ -49,9 +49,13 @@ const Home = () => {
               </p>
               <h3>What We Serve</h3>
               <p>
-                Product Quality Is Our Priority, And Always Guarantees
+                Getting your favorite meals delivered has never been this easy!
                 <br />
-                Halal And Safety Until It Is In Your Hands.
+                With just a few taps, you can browse, order, and track your food
+                <br />
+                in real time. Whether you're craving something quick or planning
+                <br />a feast, we ensure a smooth and hassle-free experience
+                from start to finish.
               </p>
             </div>
             <HiwCards />
