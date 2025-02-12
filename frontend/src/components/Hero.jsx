@@ -18,7 +18,7 @@ const HeroSlide = ({ title, description, imageSrc, onButtonClick }) => {
           <h2>
             {title}
             <br />
-            Delivery Your <span>Food</span>
+            Delivering Your <span>Food</span>
           </h2>
           <p>{description}</p>
         </div>
