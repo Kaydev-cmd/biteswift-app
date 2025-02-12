@@ -1,3 +1,19 @@
+.navbar .content .search-container {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .content .search-input {
+  width: 240px;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.navbar .content .search-btn:hover {
+  opacity: 0.7;
+}
+
 .navbar {
   background-image: url("/images/home/navbar.png");
   background-position: center;
@@ -52,13 +68,23 @@
   list-style: none;
 }
 
-.navbar .content .links nav ul li a {
+.navbar .content .links nav ul li,
+.navbar .content .mobile-menu ul li {
+  cursor: pointer;
+}
+
+.navbar .content .links nav ul li:hover,
+.navbar .content .mobile-menu ul li:hover {
+  text-decoration: underline #ffcb45;
+}
+
+/* .navbar .content .links nav ul li a {
   text-decoration: none;
 }
 
 .navbar .content .links nav ul li a:hover {
   text-decoration: underline 2px #ffcb45;
-}
+} */
 
 .navbar .content .icons-and-btn {
   gap: 40px;
@@ -131,6 +157,41 @@
   color: #ffcb45;
 }
 
+.navbar .content .icons-and-btn .search-btn {
+  width: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar .content .search-results {
+  list-style: none;
+  position: absolute;
+  top: 5.5%;
+  width: 239px;
+  padding: 0;
+  margin-top: 6px;
+  background: white;
+  border-top: 1px solid #ddd;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.navbar .content .search-result-item {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.navbar .content .search-result-item:hover {
+  background: #f1f1f1;
+}
+
+.navbar .content .no-results {
+  color: grey;
+  text-align: center;
+}
+
 /* Close Button */
 
 .navbar .close-btn {
@@ -146,6 +207,9 @@
 
 /* 2xl */
 @media (max-width: 1536px) {
+  .navbar .content .search-results {
+    top: 6.3%;
+  }
 }
 
 /* xl */
@@ -153,12 +217,25 @@
   .navbar .content .links nav ul li a {
     font-size: 14px;
   }
+  .navbar .content .search-results {
+    top: 6.2%;
+  }
 }
 
 /* lg */
 @media (max-width: 1024px) {
   .navbar .content .links nav ul {
     gap: 20px;
+  }
+  .navbar .content .search-input {
+    position: absolute;
+    top: 8%;
+    left: 55%;
+  }
+  .navbar .content .search-results {
+    top: 10.8%;
+    left: 55.1%;
+    z-index: 1000;
   }
 }
 

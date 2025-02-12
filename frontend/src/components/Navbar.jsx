@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IconContext } from "react-icons";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose, IoSearch } from "react-icons/io5";
@@ -9,9 +9,51 @@ import "./Navbar.css";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const searchRef = useRef(null);
+
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
+
+  const toggleSearch = () => {
+    setIsSearchOpen((prev) => !prev);
+
+    // Delay adding the event listener to avoid immediately closing the search bar
+    setTimeout(() => {
+      document.addEventListener("mousedown", handleClickOutside);
+    }, 0);
+  };
+
+  // Close search whne clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setIsSearchOpen(false);
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Dummy Food Items list
+  const foodMenu = [
+    "Cheese Burger",
+    "Pepperoni Pizza",
+    "Chicken Wrap",
+    "Vegan Salad",
+    "BBQ Ribs",
+    "Pasta Carbonara",
+    "Chocolate Cake",
+    "Mango Smoothie",
+  ];
+
+  // Filter food items based on search query
+  const filterdItems = foodMenu.filter((item) =>
+    item.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <>
@@ -28,7 +70,7 @@ export const Navbar = () => {
             <div className="links">
               <nav>
                 <ul>
-                  {["Home", "Menu", "How it works", "About", "Contact"].map(
+                  {["Home", "Menu", "How it Works", "About", "Contact"].map(
                     (item) => (
                       <li key={item}>
                         <Link
@@ -46,15 +88,47 @@ export const Navbar = () => {
               </nav>
             </div>
 
+            {/* Search Input Field */}
+            {isSearchOpen && (
+              <div
+                className={`search-container ${isSearchOpen ? "open" : ""}`}
+                ref={searchRef}
+              >
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="search-input"
+                />
+                {/* Display Filtered Menu Items */}
+                {searchQuery && (
+                  <ul className="search-results">
+                    {filterdItems.length > 0 ? (
+                      filterdItems.map((item, index) => (
+                        <li key={item} className="search-result-item">
+                          {item}
+                        </li>
+                      ))
+                    ) : (
+                      <li className="search-result-item no-results">
+                        No results found
+                      </li>
+                    )}
+                  </ul>
+                )}
+              </div>
+            )}
+
             {/* Icons and Sign-in Button */}
             <div className="icons-and-btn">
-              <a href="#search">
+              <button className="search-btn" onClick={toggleSearch}>
                 <IconContext.Provider
                   value={{ color: "#000", className: "searchIcon" }}
                 >
                   <IoSearch size={24} />
                 </IconContext.Provider>
-              </a>
+              </button>
               <a href="#cart">
                 <IconContext.Provider
                   value={{ color: "#000", className: "cartIcon" }}
@@ -82,7 +156,7 @@ export const Navbar = () => {
                 <IoClose size={30} color="#fff" />
               </button>
               <ul>
-                {["Home", "Menu", "How it works", "About", "Contact"].map(
+                {["Home", "Menu", "How it Works", "About", "Contact"].map(
                   (item) => (
                     <li key={item}>
                       <Link
