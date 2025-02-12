@@ -40,6 +40,8 @@
 
 .hero .content .left-wrapper .text p {
   color: #1d1d1d;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .hero .content .left-wrapper button {
