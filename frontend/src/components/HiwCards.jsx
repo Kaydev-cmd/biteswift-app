@@ -28,7 +28,7 @@ export const HiwCards = () => {
       image: "/images/home/courier 1.png",
       title: "Track Your Delivery",
       description:
-        "Sit back, relax, and watch your order come to life! Real-time tracking enssures your food is always on the way.",
+        "Sit back, relax, and watch your order come to life! Real-time tracking ensures your food is always on the way.",
     },
   ];
   return (
