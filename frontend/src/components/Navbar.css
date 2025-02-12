@@ -1,10 +1,9 @@
-/* Work on links transition and animation */
-
 .navbar {
   background-image: url("/images/home/navbar.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 14px 24px;
 }
 
 .navbar .content .menu-icon {
@@ -33,21 +32,16 @@
 
 .navbar .content {
   justify-content: space-between;
-  padding: 14px 60px;
+  padding: 14px 0px;
 }
 
 .navbar .content .header a {
-  gap: 2px;
   text-decoration: none;
 }
 
 .navbar .content .header a h1 {
   font-size: 16px;
   text-transform: none;
-}
-
-.navbar .content .header a img {
-  width: 30px;
 }
 
 .navbar .content .links nav ul {
@@ -96,20 +90,66 @@
 .navbar .content .icons-and-btn .cartIcon:hover {
   fill: #ffcb45;
 }
+
+.navbar .mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background-color: rgba(255, 203, 69, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.navbar .mobile-menu.open {
+  right: 0;
+}
+
+.navbar .mobile-menu ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.navbar .mobile-menu ul li {
+  margin: 40px 0;
+}
+
+.navbar .mobile-menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar .mobile-menu ul li a:hover {
+  color: #ffcb45;
+}
+
+/* Close Button */
+
+.navbar .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 /* Media Queries */
 
 /* 2xl */
 @media (max-width: 1536px) {
-  .container {
-    max-width: 1280px;
-  }
 }
 
 /* xl */
 @media (max-width: 1280px) {
-  .container {
-    max-width: 1024px;
-  }
   .navbar .content .links nav ul li a {
     font-size: 14px;
   }
@@ -117,12 +157,6 @@
 
 /* lg */
 @media (max-width: 1024px) {
-  .container {
-    max-width: 768px;
-  }
-  .navbar .content {
-    padding: 14px 0px;
-  }
   .navbar .content .links nav ul {
     gap: 20px;
   }
@@ -130,9 +164,6 @@
 
 /* md */
 @media (max-width: 768px) {
-  .container {
-    max-width: 640px;
-  }
   .navbar .content .icons-and-btn,
   .navbar .content .links {
     display: none;
@@ -144,14 +175,8 @@
 
 /* sm */
 @media (max-width: 640px) {
-  .container {
-    max-width: 475px;
-  }
 }
 
 /* xs */
 @media (max-width: 475px) {
-  .container {
-    width: 100%;
-  }
 }

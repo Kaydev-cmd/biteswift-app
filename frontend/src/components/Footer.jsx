@@ -10,8 +10,7 @@ export const Footer = () => {
             <div className="left-wrapper">
               <div className="name-and-icon">
                 <a href="/">
-                  <h1>Let&#39;sFood</h1>
-                  <img src="/images/home/food 2.png" alt="Logo" />
+                  <h1>BiteSwift</h1>
                 </a>
               </div>
               <p>
@@ -73,7 +72,7 @@ export const Footer = () => {
           </div>
           <hr />
           <p className="copyright">
-            &copy; 2022 Let&#39;sFood. All Rights Reserved
+            &copy; 2025 BiteSwift. All Rights Reserved
           </p>
         </div>
       </div>

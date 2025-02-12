@@ -1,71 +1,97 @@
-// Work on dropdown menu using useState Hook
-
-// import React from 'react'
+import { useState } from "react";
 import { IconContext } from "react-icons";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { IoSearch } from "react-icons/io5";
-import { FaCartShopping } from "react-icons/fa6";
+import { IoClose, IoSearch } from "react-icons/io5";
+import { FaCartShopping, FaLessThanEqual } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
 import "./Navbar.css";
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
     <>
       <div className="navbar">
         <div className="container">
           <div className="content">
             <div className="header">
-              <a href="">
-                <h1>Let&#39;sFood</h1>
-                <img src="/images/home/food 2.png" alt="Food" />
+              <a href="/">
+                <h1>BiteSwift</h1>
               </a>
             </div>
+
+            {/* Desktop Navigation */}
             <div className="links">
               <nav>
                 <ul>
-                  <li>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="#menu">Menu</a>
-                  </li>
-                  <li>
-                    <a href="#how-it-works">How it works</a>
-                  </li>
-                  <li>
-                    <a href="#about">About</a>
-                  </li>
-                  <li>
-                    <a href="#contact">Contact</a>
-                  </li>
+                  {["Home", "Menu", "How it works", "About", "Contact"].map(
+                    (item) => (
+                      <li key={item}>
+                        <a href={`#${item.toLowerCase().replace(/\s/g, "-")}`}>
+                          {item}
+                        </a>
+                      </li>
+                    )
+                  )}
                 </ul>
               </nav>
             </div>
+
+            {/* Icons and Sign-in Button */}
             <div className="icons-and-btn">
-              <a href="">
+              <a href="#search">
                 <IconContext.Provider
                   value={{ color: "#000", className: "searchIcon" }}
                 >
                   <IoSearch size={24} />
                 </IconContext.Provider>
               </a>
-              <a href="">
+              <a href="#cart">
                 <IconContext.Provider
                   value={{ color: "#000", className: "cartIcon" }}
                 >
                   <FaCartShopping size={20} />
                 </IconContext.Provider>
               </a>
-              <button>
+              <button className="sign-in-btn">
                 <PiSignInBold size={20} />
                 Sign in
               </button>
             </div>
+
+            {/* Mobile Menu Icon */}
             <HiOutlineMenuAlt3
               className="menu-icon"
               size={30}
               color="#ffcb45"
+              onClick={toggleMenu}
             />
+
+            {/* Mobile Menu */}
+            <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
+              <button className="close-btn" onClick={toggleMenu}>
+                <IoClose size={30} color="#fff" />
+              </button>
+              <ul>
+                {["Home", "Menu", "How it works", "About", "Contact"].map(
+                  (item) => (
+                    <li key={item}>
+                      <a
+                        href={`#${item
+                          .toLocaleLowerCase()
+                          .replace(/\s/g, "-")}`}
+                        onClick={toggleMenu}
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
