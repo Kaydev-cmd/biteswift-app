@@ -4,6 +4,7 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose, IoSearch } from "react-icons/io5";
 import { FaCartShopping, FaLessThanEqual } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
+import { Link } from "react-scroll";
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -30,9 +31,14 @@ export const Navbar = () => {
                   {["Home", "Menu", "How it works", "About", "Contact"].map(
                     (item) => (
                       <li key={item}>
-                        <a href={`#${item.toLowerCase().replace(/\s/g, "-")}`}>
+                        <Link
+                          to={item.toLowerCase().replace(/\s/g, "-")}
+                          smooth={true}
+                          duration={500}
+                          offset={-70}
+                        >
                           {item}
-                        </a>
+                        </Link>
                       </li>
                     )
                   )}
@@ -79,14 +85,15 @@ export const Navbar = () => {
                 {["Home", "Menu", "How it works", "About", "Contact"].map(
                   (item) => (
                     <li key={item}>
-                      <a
-                        href={`#${item
-                          .toLocaleLowerCase()
-                          .replace(/\s/g, "-")}`}
+                      <Link
+                        to={item.toLowerCase().replace(/\s/g, "-")}
+                        smooth={true}
+                        duration={500}
+                        offset={-70}
                         onClick={toggleMenu}
                       >
                         {item}
-                      </a>
+                      </Link>
                     </li>
                   )
                 )}
