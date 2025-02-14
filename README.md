@@ -33,9 +33,9 @@
     📌 <strong>Roadmap & Future Enhancements:</strong>
   </h2>
   <ul>
-    <li>🛵 <strong>Delivery Partner App</strong>for drivers.</li>
-    <li>📱 <strong>Mobile App </strong>version with React Native.</li>
-    <li>🏆 <strong>Loyalty & Rewards System</strong>for users.</li>
+    <li>🛵 <strong>Delivery Partner App</strong> for drivers.</li>
+    <li>📱 <strong>Mobile App</strong> version with React Native.</li>
+    <li>🏆 <strong>Loyalty & Rewards System</strong> for users.</li>
   </ul>
 </div>
 
