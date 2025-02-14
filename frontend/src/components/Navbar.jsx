@@ -11,12 +11,18 @@ import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
-export const Navbar = () => {
+export const Navbar = ({ cartItems = [] }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [cartCount, setCartCount] = useState(cartItems.length);
 
   const searchRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setCartCount(cartItems.length); // This updates the cart count when cartItems change
+  }, [cartItems]);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -31,8 +37,7 @@ export const Navbar = () => {
     }, 0);
   };
 
-  const navigate = useNavigate();
-  const handleButtonClick = () => {
+  const handleCartClick = () => {
     navigate("/cart");
   };
 
@@ -140,13 +145,19 @@ export const Navbar = () => {
                   <IoSearch size={24} />
                 </IconContext.Provider>
               </button>
-              <button className="cart-btn" onClick={handleButtonClick}>
+
+              {/* Cart Button with Count */}
+              <button className="cart-btn" onClick={handleCartClick}>
                 <IconContext.Provider
                   value={{ color: "#000", className: "cartIcon" }}
                 >
                   <FaCartShopping size={20} />
                 </IconContext.Provider>
+                {cartCount > 0 && (
+                  <span className="cart-count">{cartCount}</span>
+                )}
               </button>
+
               <button className="sign-in-btn">
                 <PiSignInBold size={20} />
                 Sign in
