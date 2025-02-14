@@ -41,6 +41,10 @@ export const Navbar = ({ cartItems = [] }) => {
     navigate("/cart");
   };
 
+  const handleSignInClick = () => {
+    navigate("/sign-in");
+  };
+
   // Close search when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -158,7 +162,7 @@ export const Navbar = ({ cartItems = [] }) => {
                 )}
               </button>
 
-              <button className="sign-in-btn">
+              <button className="sign-in-btn" onClick={handleSignInClick}>
                 <PiSignInBold size={20} />
                 Sign in
               </button>

@@ -204,7 +204,7 @@
   cursor: pointer;
 }
 
-.navbar .content .cart-btn {
+.navbar .content .cart-count {
   position: absolute;
   top: -5px;
   right: -5px;
