@@ -1,3 +1,6 @@
+// Work on cart count feature
+// Work on sign in feature
+
 import { useEffect, useRef, useState } from "react";
 import { IconContext } from "react-icons";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -5,12 +8,14 @@ import { IoClose, IoSearch } from "react-icons/io5";
 import { FaCartShopping, FaLessThanEqual } from "react-icons/fa6";
 import { PiSignInBold } from "react-icons/pi";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
   const searchRef = useRef(null);
 
   const toggleMenu = () => {
@@ -26,7 +31,12 @@ export const Navbar = () => {
     }, 0);
   };
 
-  // Close search whne clicking outside
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate("/cart");
+  };
+
+  // Close search when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -101,6 +111,7 @@ export const Navbar = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="search-input"
                 />
+
                 {/* Display Filtered Menu Items */}
                 {searchQuery && (
                   <ul className="search-results">
@@ -129,13 +140,13 @@ export const Navbar = () => {
                   <IoSearch size={24} />
                 </IconContext.Provider>
               </button>
-              <a href="#cart">
+              <button className="cart-btn" onClick={handleButtonClick}>
                 <IconContext.Provider
                   value={{ color: "#000", className: "cartIcon" }}
                 >
                   <FaCartShopping size={20} />
                 </IconContext.Provider>
-              </a>
+              </button>
               <button className="sign-in-btn">
                 <PiSignInBold size={20} />
                 Sign in

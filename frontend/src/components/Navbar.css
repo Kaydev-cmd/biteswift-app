@@ -157,7 +157,8 @@
   color: #ffcb45;
 }
 
-.navbar .content .icons-and-btn .search-btn {
+.navbar .content .icons-and-btn .search-btn,
+.navbar .content .icons-and-btn .cart-btn {
   width: 20px;
   background: none;
   border: none;

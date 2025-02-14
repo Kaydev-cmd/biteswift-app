@@ -32,9 +32,9 @@ const HeroSlide = ({ title, description, imageSrc, onButtonClick }) => {
 export const Hero = () => {
   const navigate = useNavigate();
 
-  // Navigate to the order page
+  // Navigate to the menu page
   const handleButtonClick = () => {
-    navigate("/order");
+    navigate("/menu");
   };
 
   // Dyanamic Slide data
