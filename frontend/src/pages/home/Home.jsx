@@ -1,5 +1,6 @@
 import React from "react";
 import { lazy, Suspense, useState, useEffect, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Home.css";
 
@@ -14,6 +15,12 @@ const Home = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleSignInClick = () => {
+    navigate("/sign-in");
+  };
 
   // Fetch menu items (simulating API call)
   useEffect(() => {
@@ -118,9 +125,7 @@ const Home = () => {
               Join our members and get
               <br />a discount of up to 50%
             </p>
-            <button onClick={() => alert("Sign-up form coming soon!!")}>
-              Sign Up
-            </button>
+            <button onClick={handleSignInClick}>Sign Up</button>
           </div>
         </div>
       </section>

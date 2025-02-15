@@ -44,6 +44,14 @@
   color: #000;
 }
 
+.footer .content .icons {
+  justify-content: space-around;
+}
+
+.footer .content .icons a {
+  color: #000;
+}
+
 .footer .content {
   justify-content: space-around;
   margin-top: 12px;
@@ -162,6 +170,12 @@
   .footer .content .right-wrapper p,
   .footer .content .left-wrapper p {
     text-align: center;
+  }
+  .footer .content .icons {
+    gap: 32px;
+  }
+  .footer .content .left-wrapper {
+    margin-bottom: 24px;
   }
 }
 

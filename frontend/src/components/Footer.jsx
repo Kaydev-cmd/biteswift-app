@@ -1,7 +1,44 @@
-// import React from 'react'
+import React from "react";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import "./Footer.css";
 
 export const Footer = () => {
+  const socialLinks = [
+    { id: 1, icon: <FaInstagram size={30} />, link: "#" },
+    { id: 2, icon: <FaFacebook size={30} />, link: "#" },
+    { id: 3, icon: <FaTwitter size={30} />, link: "#" },
+  ];
+
+  const companyLinks = [
+    {
+      text: "About us",
+      link: "#",
+    },
+    {
+      text: "Career",
+      link: "#",
+    },
+    {
+      text: "How it works",
+      link: "#how-it-works",
+    },
+  ];
+
+  const policyLinks = [
+    {
+      text: "FAQs",
+      link: "#",
+    },
+    {
+      text: "Privacy",
+      link: "#",
+    },
+    {
+      text: "Shipping",
+      link: "#",
+    },
+  ];
+
   return (
     <>
       <div className="footer">
@@ -19,53 +56,35 @@ export const Footer = () => {
                 Murni, Cikarang Barat, Kab, Bekasi
               </p>
               <div className="icons">
-                <a href="#">
-                  <img
-                    src="/images/home/akar-icons_instagram-fill.png"
-                    alt="Instagram"
-                  />
-                </a>
-                <a href="#">
-                  <img src="/images/home/bx_bxl-facebook.png" alt="Facebook" />
-                </a>
-                <a href="#">
-                  <img
-                    src="/images/home/akar-icons_twitter-fill.png"
-                    alt="Twitter"
-                  />
-                </a>
+                {socialLinks.map(({ id, icon, link }) => (
+                  <a key={id} href={link} aria-label="Social Media Link">
+                    {icon}
+                  </a>
+                ))}
               </div>
             </div>
             <div className="right-wrapper">
               <div className="company">
                 <h5>Company</h5>
-                <p>
-                  <a href="#">About Us</a>
-                </p>
-                <p>
-                  <a href="#">Career</a>
-                </p>
-                <p>
-                  <a href="#how-it-works">How it works</a>
-                </p>
+                {companyLinks.map(({ text, link }) => (
+                  <p key={text}>
+                    <a href={link}>{text}</a>
+                  </p>
+                ))}
               </div>
               <div className="policy">
                 <h5>Policy</h5>
-                <p>
-                  <a href="#">FAQ</a>
-                </p>
-                <p>
-                  <a href="#">Privacy</a>
-                </p>
-                <p>
-                  <a href="#">Shipping</a>
-                </p>
+                {policyLinks.map(({ text, link }) => (
+                  <p key={text}>
+                    <a href={link}>{text}</a>
+                  </p>
+                ))}
               </div>
               <div className="get-in-touch">
                 <h5>Get In Touch</h5>
                 <p>+62 896 7311 2766</p>
                 <p>
-                  <a href="#">food@example.com</a>
+                  <a href="mailto:food@example.com">food@example.com</a>
                 </p>
               </div>
             </div>
