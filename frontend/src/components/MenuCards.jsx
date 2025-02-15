@@ -1,91 +1,73 @@
-// import React from 'react'
+import React, { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
 import { FaHeart } from "react-icons/fa";
+import PropTypes from "prop-types";
 import "./MenuCards.css";
 
-export const MenuCards = () => {
+export const MenuCards = ({ items }) => {
+  const [favorites, setFavorites] = useState({});
+
+  // Toggle favorite status
+  const toggleFavorite = (id) => {
+    setFavorites((prevFavorites) => ({
+      ...prevFavorites,
+      [id]: !prevFavorites[id],
+    }));
+  };
+
   return (
     <>
       <div className="content-cards">
-        <div className="card">
-          <div className="upper-wrapper">
-            <img src="/images/home/unsplash_G6wx5j5-dR8.png" alt="Food" />
-          </div>
-          <div className="lower-wrapper">
-            <div className="card-text">
-              <h3>Mie Ramen</h3>
-              <p>lorem ipsum</p>
+        {items.length > 0 ? (
+          items.map((item) => (
+            <div className="card" key={item.id}>
+              <div className="upper-wrapper">
+                <img
+                  src={item.image || "/images/home/unsplash_G6wx5j5-dR8.png"}
+                  alt={item.name}
+                />
+              </div>
+              <div className="lower-wrapper">
+                <div className="card-text">
+                  <h3>{item.name}</h3>
+                  <p>{item.description || "Delicious and fresh!"}</p>
+                </div>
+                <div className="price-and-icon">
+                  <p>R{item.price.toFixed(2)}</p>
+                  <IconContext.Provider value={{ className: "heartIcon" }}>
+                    <button
+                      className="favorite-btn"
+                      onClick={() => toggleFavorite(item.id)}
+                    >
+                      <FaHeart
+                        size={20}
+                        color={favorites[item.id] ? "red" : "#1d1d1d"}
+                      />
+                    </button>
+                  </IconContext.Provider>
+                </div>
+              </div>
             </div>
-            <div className="price-and-icon">
-              <p>R50.00</p>
-              <IconContext.Provider
-                value={{ color: "#1d1d1d", className: "heartIcon" }}
-              >
-                <FaHeart size={20} />
-              </IconContext.Provider>
-            </div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="upper-wrapper">
-            <img src="/images/home/unsplash_zBONkjGFGko.png" alt="Food" />
-          </div>
-          <div className="lower-wrapper">
-            <div className="card-text">
-              <h3>Salad Tahu</h3>
-              <p>lorem ipsum</p>
-            </div>
-            <div className="price-and-icon">
-              <p>R50.00</p>
-              <IconContext.Provider
-                value={{ color: "#1d1d1d", className: "heartIcon" }}
-              >
-                <FaHeart size={20} />
-              </IconContext.Provider>
-            </div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="upper-wrapper">
-            <img src="/images/home/unsplash_SqYmTDQYMjo.png" alt="Food" />
-          </div>
-          <div className="lower-wrapper">
-            <div className="card-text">
-              <h3>Roti Bakar</h3>
-              <p>lorem ipsum</p>
-            </div>
-            <div className="price-and-icon">
-              <p>R50.00</p>
-              <IconContext.Provider
-                value={{ color: "#1d1d1d", className: "heartIcon" }}
-              >
-                <FaHeart size={20} />
-              </IconContext.Provider>
-            </div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="upper-wrapper">
-            <img src="/images/home/unsplash_vg2p2BK57bY.png" alt="Food" />
-          </div>
-          <div className="lower-wrapper">
-            <div className="card-text">
-              <h3>Spaghetti</h3>
-              <p>lorem ipsum</p>
-            </div>
-            <div className="price-and-icon">
-              <p>R50.00</p>
-              <IconContext.Provider
-                value={{ color: "#1d1d1d", className: "heartIcon" }}
-              >
-                <FaHeart size={20} />
-              </IconContext.Provider>
-            </div>
-          </div>
-        </div>
+          ))
+        ) : (
+          <p className="loading">No menu items available.</p>
+        )}
       </div>
     </>
   );
+};
+
+// Prop Validation
+MenuCards.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string,
+      description: PropTypes.string,
+      price: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default MenuCards;
