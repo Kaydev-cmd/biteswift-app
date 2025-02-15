@@ -36,15 +36,15 @@
   border-bottom-right-radius: 12px;
 }
 
-.menu .content-cards .card .lower-wrapper .text h3 {
+.menu .content-cards .card .lower-wrapper .card-text h3 {
   font-size: 22px;
 }
 
-.menu .content-cards .card .lower-wrapper .text p {
+.menu .content-cards .card .lower-wrapper .card-text p {
   font-size: 14px;
 }
 
-.menu .content-cards .card .lower-wrapper .text {
+.menu .content-cards .card .lower-wrapper .card-text {
   text-align: center;
 }
 
@@ -66,16 +66,10 @@
 
 /* 2xl */
 @media (max-width: 1536px) {
-  .container {
-    max-width: 1280px;
-  }
 }
 
 /* xl */
 @media (max-width: 1280px) {
-  .container {
-    max-width: 1024px;
-  }
   .menu .content-cards .card {
     width: 240px;
   }
@@ -86,25 +80,19 @@
 
 /* lg */
 @media (max-width: 1024px) {
-  .container {
-    max-width: 768px;
-  }
   .menu .content-cards .card {
     width: 180px;
   }
   .menu .content-cards .card .upper-wrapper img {
     width: 120px;
   }
-  .menu .content-cards .card .lower-wrapper .text h3 {
+  .menu .content-cards .card .lower-wrapper .card-text h3 {
     font-size: 18px;
   }
 }
 
 /* md */
 @media (max-width: 768px) {
-  .container {
-    max-width: 640px;
-  }
   .menu .content-cards {
     flex-direction: column;
     gap: 40px;
@@ -119,14 +107,8 @@
 
 /* sm */
 @media (max-width: 640px) {
-  .container {
-    max-width: 475px;
-  }
 }
 
 /* xs */
 @media (max-width: 475px) {
-  .container {
-    width: 100%;
-  }
 }

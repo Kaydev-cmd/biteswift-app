@@ -12,7 +12,7 @@ export const MenuCards = () => {
             <img src="/images/home/unsplash_G6wx5j5-dR8.png" alt="Food" />
           </div>
           <div className="lower-wrapper">
-            <div className="text">
+            <div className="card-text">
               <h3>Mie Ramen</h3>
               <p>lorem ipsum</p>
             </div>
@@ -31,7 +31,7 @@ export const MenuCards = () => {
             <img src="/images/home/unsplash_zBONkjGFGko.png" alt="Food" />
           </div>
           <div className="lower-wrapper">
-            <div className="text">
+            <div className="card-text">
               <h3>Salad Tahu</h3>
               <p>lorem ipsum</p>
             </div>
@@ -50,7 +50,7 @@ export const MenuCards = () => {
             <img src="/images/home/unsplash_SqYmTDQYMjo.png" alt="Food" />
           </div>
           <div className="lower-wrapper">
-            <div className="text">
+            <div className="card-text">
               <h3>Roti Bakar</h3>
               <p>lorem ipsum</p>
             </div>
@@ -69,7 +69,7 @@ export const MenuCards = () => {
             <img src="/images/home/unsplash_vg2p2BK57bY.png" alt="Food" />
           </div>
           <div className="lower-wrapper">
-            <div className="text">
+            <div className="card-text">
               <h3>Spaghetti</h3>
               <p>lorem ipsum</p>
             </div>

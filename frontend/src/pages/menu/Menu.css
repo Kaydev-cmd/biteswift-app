@@ -1,0 +1,116 @@
+.menu-page .menu-text {
+  text-align: center;
+  background: url("/images/home/Group 8.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-page .menu-text h1 {
+  font-size: 68px;
+}
+
+.menu-page .menu-text p {
+  color: #ffcb45;
+}
+
+.menu-page .content .filters-and-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 0;
+}
+
+.menu-page .content .filters button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  transition: color 0.3s;
+}
+
+.menu-page .content .filters button:hover {
+  color: #ffcb45;
+}
+
+.menu-page .content .filters button.active {
+  font-weight: bold;
+  color: #ffcb45;
+}
+
+.menu-page .content .filters {
+  display: flex;
+  gap: 24px;
+}
+
+.menu-page .content .filter-btn {
+  background-color: #ffcb45;
+  padding: 10px 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-page .content .filter-btn:hover {
+  opacity: 0.8;
+}
+
+.menu-page .content .menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.menu-page .loading {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Media Queries */
+
+/* 2xl */
+@media (max-width: 1536px) {
+}
+
+/* xl */
+@media (max-width: 1280px) {
+}
+
+/* lg */
+@media (max-width: 1024px) {
+}
+
+/* md */
+@media (max-width: 768px) {
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .menu-page .content .filters-and-btn {
+    flex-direction: column-reverse;
+  }
+  .menu-page .content .filters {
+    gap: 6px;
+  }
+  .menu-page .content .filters-and-btn {
+    gap: 4px;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .menu-page .content .filters button {
+    font-size: 14px;
+  }
+}
