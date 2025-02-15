@@ -89,7 +89,7 @@ export const Navbar = ({ cartItems = [] }) => {
             <div className="links">
               <nav>
                 <ul>
-                  {["Home", "Menu", "How it Works", "About", "Contact"].map(
+                  {["Home", "Menu", "How it works", "About", "Contact"].map(
                     (item) => (
                       <li key={item}>
                         <Link

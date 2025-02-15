@@ -100,6 +100,9 @@
   .menu-page .content .filters-and-btn {
     flex-direction: column-reverse;
   }
+  .menu-page .menu-text h1 {
+    font-size: 48px;
+  }
   .menu-page .content .filters {
     gap: 6px;
   }
