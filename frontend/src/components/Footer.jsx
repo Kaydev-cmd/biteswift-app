@@ -41,7 +41,7 @@ export const Footer = () => {
 
   return (
     <>
-      <div className="footer">
+      <div className="footer" id="contact">
         <div className="container">
           <div className="content">
             <div className="left-wrapper">

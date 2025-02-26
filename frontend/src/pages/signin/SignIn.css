@@ -1,0 +1,115 @@
+.sign-in .content {
+  padding: 24px;
+}
+
+.sign-in .content .wrapper h1 {
+  font-size: 24px;
+  text-align: center;
+  text-transform: none;
+  margin: 24px 0;
+}
+
+.sign-in .content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in .content .sign-in-form .form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sign-in .content .sign-in-form .form-group label {
+  margin-top: 24px;
+}
+
+.sign-in .content .sign-in-form form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+.sign-in .content .wrapper .create-account-btn {
+  padding: 16px 26px;
+  background-color: #ffcb45;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.sign-in .content .wrapper .google-sign-in-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 26px;
+  background-color: #2d3748;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.sign-in .content .wrapper .create-account-btn:hover {
+  opacity: 0.6;
+}
+
+.sign-in .content .wrapper .google-sign-in-btn:hover {
+  opacity: 0.9;
+}
+
+.sign-in .content .wrapper .btns-wrapper {
+  display: flex;
+  margin-top: 26px;
+  gap: 48px;
+}
+
+.sign-in .content .wrapper p {
+  text-align: center;
+  margin: 36px 0;
+}
+
+.sign-in .content .wrapper p a {
+  text-decoration: none;
+}
+
+/* Media Queries */
+
+/* 2xl */
+@media (max-width: 1536px) {
+}
+
+/* xl */
+@media (max-width: 1280px) {
+}
+
+/* lg */
+@media (max-width: 1024px) {
+}
+
+/* md */
+@media (max-width: 768px) {
+  .sign-in .content .sign-in-form .form-group {
+    width: 100%;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .sign-in .content .wrapper .btns-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+}

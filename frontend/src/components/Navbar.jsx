@@ -1,5 +1,4 @@
-// Work on cart count feature
-// Work on sign in feature
+// Create about us section
 
 import { useEffect, useRef, useState } from "react";
 import { IconContext } from "react-icons";
